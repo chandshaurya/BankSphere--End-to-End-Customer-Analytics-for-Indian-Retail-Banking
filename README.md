@@ -54,34 +54,8 @@ The datasets used in **BankSphere** are **synthetic** and were generated using t
    - Assigning net profit margin per transaction
    - Calculating **Customer Lifetime Value (CLV)** using total transactions and margins
 
-###  Code Snippet:
-```python
-from faker import Faker
-import pandas as pd
-import random
 
-faker = Faker('en_IN')
 
-customers = []
-for _ in range(1000):
-    customers.append({
-        "CustomerID": faker.uuid4(),
-        "Name": faker.name(),
-        "Age": random.randint(21, 70),
-        "Gender": random.choice(["Male", "Female"]),
-        "City": faker.city(),
-        "State": faker.state(),
-        "Occupation": random.choice(["Salaried", "Business", "Professional", "Student"]),
-        "Income": random.randint(200000, 2000000),
-        "CustomerSegment": random.choice(["Platinum", "Gold", "Regular"]),
-        "AccountType": random.choice(["Savings", "Current", "Salary"]),
-        "AccountOpenYear": random.randint(2010, 2025)
-    })
-
-df_customers = pd.DataFrame(customers)
-df_customers.to_csv("customers.csv", index=False)
-
-\```
 
 ## 📂 Dataset Details
 
@@ -283,3 +257,31 @@ The Power BI dashboard is organized into **five pages** with clear navigation an
 5. **Geographic Patterns:** High growth in western states, but risk concentration in parts of north and south.
 
 ---
+###  Code Snippet:
+```python
+from faker import Faker
+import pandas as pd
+import random
+
+faker = Faker('en_IN')
+
+customers = []
+for _ in range(1000):
+    customers.append({
+        "CustomerID": faker.uuid4(),
+        "Name": faker.name(),
+        "Age": random.randint(21, 70),
+        "Gender": random.choice(["Male", "Female"]),
+        "City": faker.city(),
+        "State": faker.state(),
+        "Occupation": random.choice(["Salaried", "Business", "Professional", "Student"]),
+        "Income": random.randint(200000, 2000000),
+        "CustomerSegment": random.choice(["Platinum", "Gold", "Regular"]),
+        "AccountType": random.choice(["Savings", "Current", "Salary"]),
+        "AccountOpenYear": random.randint(2010, 2025)
+    })
+
+df_customers = pd.DataFrame(customers)
+df_customers.to_csv("customers.csv", index=False)
+
+\``` 
