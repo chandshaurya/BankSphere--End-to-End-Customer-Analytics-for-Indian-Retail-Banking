@@ -81,7 +81,7 @@ for _ in range(1000):
 df_customers = pd.DataFrame(customers)
 df_customers.to_csv("customers.csv", index=False)
 
------
+\```
 
 ## 📂 Dataset Details
 
