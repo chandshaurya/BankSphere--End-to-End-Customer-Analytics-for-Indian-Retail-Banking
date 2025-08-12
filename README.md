@@ -62,7 +62,7 @@ The datasets used in **BankSphere** are **synthetic** and were generated using t
 The datasets are synthetic but modeled on **real-world banking scenarios** relevant to India.  
 All four files are cleaned and linked in Power BI using **CustomerID** as the primary key.
 
-### 1️⃣ `customers.csv`['https://github.com/chandshaurya/BankSphere--End-to-End-Customer-Analytics-for-Indian-Retail-Banking/blob/main/customers.csv']
+### 1️⃣ **[customers.csv](https://github.com/chandshaurya/BankSphere--End-to-End-Customer-Analytics-for-Indian-Retail-Banking/blob/main/customers.csv)**
 Contains demographic and account-related details for each customer.
 - `CustomerID`
 - `Name`
