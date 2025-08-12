@@ -116,6 +116,57 @@ Tracks profit metrics and lifetime value per customer.
 
 ---
 
+## 📊 SQL-Based Analysis
+
+In addition to the Power BI dashboards, **BankSphere** includes a robust set of **SQL analytical queries** to extract deeper insights directly from the underlying datasets.  
+These queries enable **data validation, exploratory analysis, and performance metrics** that complement visual reporting.
+
+---
+
+### **1. Customer Demographics & Segmentation**
+1. What is the exact count and percentage of total customers in each CustomerSegment?
+2. Which top 5 State and City combinations have the highest number of customers?
+3. How many customers fall into predefined income brackets (<5 Lakhs, 5–10 Lakhs, 10–20 Lakhs, 20+ Lakhs)?
+4. What is the distribution of customers across different age groups (18–25, 26–35, 36–50, 51+)?
+5. What is the average AnnualIncome and Age for customers in the Platinum segment vs Silver segment?
+6. What is the average tenure (in years) of customers in each CustomerSegment?
+7. Which Occupation has the highest and lowest average AnnualIncome?
+8. How many new customers has the bank acquired each year based on AccountOpenDate?
+
+---
+
+### **2. Loan Portfolio & Risk Analysis**
+9. What is the loan default rate (default_flag = 1) for each CustomerSegment?
+10. What is the average ratio of LoanAmount to AnnualIncome for customers who have defaulted vs those who have not?
+11. Which top 5 Cities have the highest total LoanAmount at risk (from defaulted loans)?
+12. Which LoanType has the highest number of defaults and the highest total defaulted amount?
+13. Is the average InterestRate significantly higher for loans that have defaulted?
+14. How many customers hold more than one 'Active' loan simultaneously?
+
+---
+
+### **3. Transaction & Profitability Analysis**
+15. Who are the top 20 most profitable customers and what CustomerSegment do they belong to?
+16. Which top 5 States contribute the most to the bank’s overall Profitability?
+17. What is the average number of transactions per month for Gold vs Regular segment customers?
+18. What is the average TransactionAmount for Online Payment vs ATM Withdrawal?
+19. Is there a correlation between the total number of transactions a customer makes and their overall Profitability?
+20. Which quarter of the year sees the highest total transaction volume?
+21. What is the average Profitability of customers who have never taken a loan?
+22. What is the total Profitability for customers who have never taken a loan?
+
+---
+
+### **4. Cross-Functional & Behavioral Analysis**
+23. What is the demographic profile (avg. Age, Occupation, AnnualIncome) of customers who have defaulted on a Personal Loan?
+24. How many Platinum customers with an AnnualIncome over 20 Lakhs do not currently have an active Home Loan?
+25. Do customers who default tend to have a higher frequency of ATM Withdrawal transactions in the months leading up to the default?
+26. Which TransactionType is most common among customers under the age of 30?
+27. Do customers with more than one type of loan have a higher overall CLV score?
+
+---
+
+
 ## 📊 Dashboard Pages & KPIs
 
 The Power BI dashboard is organized into **five pages** with clear navigation and consistent theme design.
