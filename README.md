@@ -114,11 +114,84 @@ Tracks profit metrics and lifetime value per customer.
 - **Python (Pandas)** – Feature engineering & preprocessing
 - **DAX Measures** – Custom KPIs for risk, churn, profitability
 
+
+##  Python-Based Exploratory Data Analysis (EDA)
+
+Alongside Power BI dashboards and SQL queries, **BankSphere** also includes a comprehensive **Python analysis notebook** for deeper data inspection, cleaning, and modeling support.  
+
+###  Key Steps Performed
+
+1. **Data Loading & Inspection**
+   - Imported four datasets (`customers.csv`, `loans.csv`, `transactions.csv`, `profitability.csv`) using `pandas`.
+   - Verified data types, missing values, and dataset dimensions.
+
+2. **Data Cleaning**
+   - Dropped irrelevant/redundant columns (e.g., duplicate `LoanType` in loans dataset).
+   - Converted date columns (`AccountOpenDate`, `transaction date`) to `datetime`.
+   - Checked for missing values and ensured consistency across datasets.
+   - Outlier detection using **IQR method** for columns like:
+     - Age, Annual Income (Customers)
+     - Loan Amount, Interest Rate (Loans)
+     - Transaction Amount (Transactions)
+     - RevenueGenerated, NetProfitMargin (Profitability)
+
+3. **Exploratory Data Analysis (EDA)**
+   - **Customer Demographics**
+     - Gender, Age, Marital Status, Education, Occupation, Account Type.
+     - Segment-wise and state-wise distributions.
+   - **Transactions**
+     - Distribution by type, channel, merchant category.
+     - Monthly transaction trends and total amounts by state/occupation.
+   - **Loans**
+     - Distribution of loan types, loan status, defaults by occupation/state.
+     - Risk metrics: defaulted loan amounts by city, segment, tenure.
+   - **Profitability**
+     - Revenue and CLV by state, occupation, and customer segment.
+     - Net Profit Margin across customer segments.
+
+4. **Churn Analysis**
+   - Defined churn as customers inactive for **>180 days**.
+   - Built churn table with:
+     - Last transaction date
+     - Days since last transaction
+     - Churn status (Active vs Churned)
+   - Visualized churn distribution across **city** and **occupation**.
+
+5. **Cross-Sell Opportunities**
+   - Identified customers **without any loan** products.
+   - Counted and visualized cross-sell pool by **state**.
+   - Example finding: ~15,000 customers (~60%) are loan cross-sell targets.
+
+6. **Upsell Candidates**
+   - Calculated **average revenue of Gold segment**.
+   - Flagged Silver/Regular customers with **revenue above Gold’s average**.
+   - Counted and visualized upsell candidates by segment.
+   - Example finding: ~6,782 customers (~27%) are strong upgrade prospects.
+
+---
+
+###  Python Libraries Used
+- **pandas** – Data manipulation & cleaning  
+- **numpy** – Numerical operations  
+- **matplotlib** & **seaborn** – Visualization  
+- **faker** – Synthetic dataset generation  
+
+---
+
+###  Key Insights from Python Analysis
+1. **Customer Segmentation:** Platinum and Gold segments dominate profitability, while Regular has higher churn risk.  
+2. **Cross-Sell Pool:** A large share of customers (esp. in urban states) have no loan exposure — ideal for loan cross-sell campaigns.  
+3. **Upsell Potential:** Nearly one-third of Silver/Regular customers outperform Gold’s average revenue, making them ideal upgrade targets.  
+4. **Risk Management:** Defaults are concentrated in personal loans and certain occupations; tenure plays a strong role in default probability.  
+5. **Geographic Trends:** Maharashtra, Karnataka, and Delhi NCR drive both revenue and risk, highlighting the need for region-specific strategies.  
+
+
+
 ---
 
 ## 📊 SQL-Based Analysis
 
-In addition to the Power BI dashboards, **BankSphere** includes a robust set of **SQL analytical queries** to extract deeper insights directly from the underlying datasets.  
+In these, **BankSphere** includes a robust set of **SQL analytical queries** to extract deeper insights directly from the underlying datasets.  
 These queries enable **data validation, exploratory analysis, and performance metrics** that complement visual reporting.
 
 ---
@@ -169,7 +242,7 @@ These queries enable **data validation, exploratory analysis, and performance me
 
 ## 📊 Dashboard Pages & KPIs
 
-The Power BI dashboard is organized into **five pages** with clear navigation and consistent theme design.
+The Power BI dashboard is organized into **eight pages** with clear navigation and consistent theme design.
 
 ---
 
